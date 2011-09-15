@@ -1,6 +1,8 @@
 package pl.guras.rsshamster;
 
 import rss.Rss;
+
+
 import pl.guras.xml.Parser;
 
 public class App {
