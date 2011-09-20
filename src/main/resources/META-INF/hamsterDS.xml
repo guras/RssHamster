@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- ==================================================================== -->
+<!--  Datasource config for Oracle originally from Steven Coy             -->
+<!--  Podłączenie do Oraclowego schematu zakupy3						  -->
+<!-- ==================================================================== -->
+
+
+<datasources>
+   <xa-datasource>
+        <jndi-name>ZakupyDS</jndi-name>
+        <track-connection-by-tx/>
+        <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+        <xa-datasource-property name="URL">jdbc:oracle:thin:@poligon.db.srv:1521:POLIGON</xa-datasource-property>
+        <xa-datasource-property name="User">user_zakupy3</xa-datasource-property>
+        <xa-datasource-property name="Password">zakupy01</xa-datasource-property>
+        <isSameRM-override-value>false</isSameRM-override-value>
+        <no-tx-separate-pools/>
+        <valid-connection-checker-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleValidConnectionChecker</valid-connection-checker-class-name>
+        <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+    </xa-datasource>
+ <xa-datasource>
+    <jndi-name>XaAlladynDS</jndi-name>
+    <track-connection-by-tx/>
+    <isSameRM-override-value>false</isSameRM-override-value>
+    <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+    <xa-datasource-property name="URL">jdbc:oracle:thin:@poligon.db.srv:1521:POLIGON</xa-datasource-property>
+    <xa-datasource-property name="User">user_alladyn3</xa-datasource-property>
+    <xa-datasource-property name="Password">alladyn01</xa-datasource-property>
+    <!-- Checks the Oracle error codes and messages for fatal errors -->
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+    <!-- Oracles XA datasource cannot reuse a connection outside a transaction once enlisted in a global 
+transaction and vice-versa -->
+    <no-tx-separate-pools/>
+     </xa-datasource>
+</datasources>
+
+
+
+<!--	<xa-datasource-property name="URL">jdbc:oracle:thin:@poligon.db.srv:1521:POLIGON</xa-datasource-property>
+        <xa-datasource-property name="User">user_zakupy3</xa-datasource-property>
+        <xa-datasource-property name="Password">zakupy01</xa-datasource-property>-->
+
+<!-- wspisy na produkcje <xa-datasource>
+        <jndi-name>ZakupyDS</jndi-name>
+        <track-connection-by-tx/>
+        <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+        <xa-datasource-property name="URL">jdbc:oracle:thin:@10.0.0.62:1540:ZAKUPY</xa-datasource-property>
+        <xa-datasource-property name="User">srv_zakupy3</xa-datasource-property>
+        <xa-datasource-property name="Password">z1k22p23</xa-datasource-property>
+        <isSameRM-override-value>false</isSameRM-override-value>
+        <no-tx-separate-pools/>
+        <valid-connection-checker-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleValidConnectionChecker</valid-connection-checker-class-name>
+        <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+    </xa-datasource>-->
+
+

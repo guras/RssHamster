@@ -83,7 +83,7 @@
 				<configuration>
 					<extension>true</extension>
 					<generatePackage>rss</generatePackage>
-					<roundtripTestClassName>RoundtripTest</roundtripTestClassName>
+					
 				</configuration>
 			</plugin>
 			<plugin>

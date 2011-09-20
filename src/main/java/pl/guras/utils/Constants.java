@@ -1,4 +1,4 @@
-package pl.guras.transfers;
+package pl.guras.utils;
 
 /**
  *

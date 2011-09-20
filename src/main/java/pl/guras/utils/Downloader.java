@@ -1,4 +1,4 @@
-package pl.guras.transfers;
+package pl.guras.utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -49,6 +49,7 @@ public class Downloader {
 					ioe.printStackTrace();
 				}
 			}
+			System.out.println("Polaczenie zamkni?te");
 		}
 	}
 
