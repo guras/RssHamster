@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 import org.apache.log4j.Logger;
 
 public class Downloader {
@@ -15,7 +14,7 @@ public class Downloader {
 	private static final Logger LOG = Logger.getLogger(Downloader.class);
 
 	public static void get(String address) throws MalformedURLException, IOException {
-		download(address,  URLEncoder.encode(address, "UTF-8"));
+		download(address, Text.normalize(address));
 	}
 
 	public static void get(String address, String filename) throws MalformedURLException, IOException {

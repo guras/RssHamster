@@ -3,7 +3,6 @@ package pl.guras.rsshamster.service;
 import org.jboss.annotation.ejb.Service;
 import pl.guras.xml.Parser;
 import pl.guras.utils.Downloader;
-import rss.Rss;
 
 @Service(objectName = "pl.guras.rsshamster:service=TransferService")
 public class TransferService implements TransferServiceMBean {
@@ -15,6 +14,5 @@ public class TransferService implements TransferServiceMBean {
 		Downloader.get("http://whiskyblog.pl/feed/", FILE_PATH);
 
 		Parser parser = new Parser();
-		Rss rss = parser.unmarshall(FILE_PATH);
 	}
 }

@@ -82,8 +82,7 @@
 				</executions>
 				<configuration>
 					<extension>true</extension>
-					<generatePackage>rss</generatePackage>
-					
+					<generatePackage>generated</generatePackage>
 				</configuration>
 			</plugin>
 			<plugin>

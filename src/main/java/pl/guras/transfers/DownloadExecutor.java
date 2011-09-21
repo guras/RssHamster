@@ -15,8 +15,13 @@ public class DownloadExecutor {
 
 	public static void startDownload(Collection<String> urls) {
 		Long start = System.currentTimeMillis();
-		for(String url : urls) {
-			pool.execute(new DownloadTask(url));
+		try {
+			for(String url : urls) {
+				pool.execute(new DownloadTask(url));
+			}
+		} finally {
+			pool.shutdown();
+			System.out.println("juz");
 		}
 	}
 
