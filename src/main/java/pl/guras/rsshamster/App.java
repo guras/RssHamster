@@ -1,15 +1,8 @@
 package pl.guras.rsshamster;
 
-import generated.Rss;
-import generated.RssChannel.RssChannelAnyItem;
-import generated.RssChannel.RssChannelTitleOrLinkOrDescriptionItem;
-import java.net.URLEncoder;
 import java.util.LinkedList;
 import java.util.List;
 import pl.guras.transfers.DownloadExecutor;
-import pl.guras.utils.Constants;
-import pl.guras.utils.Text;
-import pl.guras.xml.Parser;
 
 public class App {
 
@@ -37,25 +30,7 @@ public class App {
 		feeds.add("http://maly-podroznik.com.pl/");
 		feeds.add("http://half-of-the-moon.blogspot.com/");
 	
-		//DownloadExecutor.startDownload(feeds);
-
-		Parser parser = new Parser();
-		System.out.println("Parsuje : " + feeds.get(0));
-		Rss feed = parser.unmarshall(Constants.FILES_PATH + Text.normalize(feeds.get(0)));
-
-		int i = 0;
-		for (RssChannelTitleOrLinkOrDescriptionItem item : feed.getChannel().getTitleOrLinkOrDescriptionItems()) {
-			System.out.println(i);
-			System.out.println(item.getItemDescription());
-			System.out.println(item.getItemTitle());
-			System.out.println(item.getItemTextInput());
-			System.out.println(item.getItemDocs());
-			System.out.println(item.getItemCategory());
-			System.out.println(item.getItemLink());
-			i++;
-
-		}
-
-		
+		DownloadExecutor.startDownload(feeds);
 	}
 }
+

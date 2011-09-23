@@ -1,18 +1,17 @@
 package pl.guras.rsshamster.service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.jboss.annotation.ejb.Service;
-import pl.guras.xml.Parser;
-import pl.guras.utils.Downloader;
 
 @Service(objectName = "pl.guras.rsshamster:service=TransferService")
 public class TransferService implements TransferServiceMBean {
 
-	public static final String FILE_PATH = "src/test/samples/feed.rss";
+	@PersistenceContext
+	private EntityManager em;
 
 	@Override
 	public void startTransfer() throws Exception {
-		Downloader.get("http://whiskyblog.pl/feed/", FILE_PATH);
 
-		Parser parser = new Parser();
 	}
 }
